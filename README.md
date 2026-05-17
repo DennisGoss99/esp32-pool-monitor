@@ -35,8 +35,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    PSU[12V DC\nOutdoor PSU] -->|12V| BUCK[Buck Converter\nLM2596]
-    BUCK -->|5V| VIN[ESP32 VIN Pin]
+    PSU[5V DC\nOutdoor PSU] -->|5V| VIN[ESP32 VIN Pin]
     VIN -->|3.3V internal| ESP32[ESP32]
 ```
 
