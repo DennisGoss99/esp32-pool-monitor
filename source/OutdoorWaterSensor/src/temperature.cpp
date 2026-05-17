@@ -13,10 +13,6 @@ void temperatureSetup(uint8_t pin) {
   sensors.begin();
 }
 
-void temperatureSetSamples(uint8_t samples) {
-  avg.setSize(samples);
-}
-
 float temperatureGetC() {
   sensors.requestTemperatures();
   float temp = sensors.getTempCByIndex(0);

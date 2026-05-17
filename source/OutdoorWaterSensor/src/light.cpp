@@ -11,10 +11,6 @@ void lightSetup() {
   lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE);
 }
 
-void lightSetSamples(uint8_t samples) {
-  avg.setSize(samples);
-}
-
 float lightGetLux() {
   avg.add(lightMeter.readLightLevel());
   return avg.get();
