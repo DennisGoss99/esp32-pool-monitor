@@ -32,5 +32,5 @@ void loop() {
   mqttPublish(MQTT_TOPIC_LIGHT, buf);
   Serial.printf("Helligkeit: %.1f lux\n", lux);
 
-  delay(10000);
+  delay(30000);
 }
