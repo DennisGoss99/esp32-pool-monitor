@@ -3,11 +3,15 @@
 #include "light.h"
 #include "mqtt.h"
 #include "config.h"
+#include "sensorconfig.h"
 
 void setup() {
   Serial.begin(115200);
+  sensorConfigLoad();
   temperatureSetup(4);
+  temperatureSetSamples(sensorConfigGet().samples);
   lightSetup();
+  lightSetSamples(sensorConfigGet().samples);
   mqttSetup();
   Serial.println("Sensoren bereit");
 }
@@ -32,5 +36,5 @@ void loop() {
   mqttPublish(MQTT_TOPIC_LIGHT, buf);
   Serial.printf("Helligkeit: %.1f lux\n", lux);
 
-  delay(10000);
+  delay(sensorConfigGet().interval * 1000);
 }
