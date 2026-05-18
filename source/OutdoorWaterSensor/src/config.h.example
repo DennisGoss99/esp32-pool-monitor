@@ -10,3 +10,5 @@
 
 #define MQTT_TOPIC_TEMPERATURE  "pool/temperature"
 #define MQTT_TOPIC_LIGHT        "pool/light"
+
+#define PUBLISH_INTERVAL_MS     30000

@@ -35,6 +35,10 @@ void mqttSetup() {
 }
 
 void mqttLoop() {
+  if (WiFi.status() != WL_CONNECTED) {
+    mqttClient.disconnect();
+    wifiConnect();
+  }
   if (!mqttClient.connected()) {
     mqttConnect();
   }
